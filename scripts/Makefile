@@ -5,7 +5,7 @@ install:
 	@true
 
 clean:
-	@rm -rf $(dir)/build
+	@docker run -it --rm -v $(dir)/code:/code -v $(dir)/build:/build amazonlinux:latest rm -rf /build/*
 
 prepare-build:
 	@mkdir -p $(dir)/build
